@@ -10,6 +10,7 @@ defineProps({
 <template>
   <div class="greetings">
    Home page
+   <el-button type="primary">test</el-button>
   </div>
 </template>
 

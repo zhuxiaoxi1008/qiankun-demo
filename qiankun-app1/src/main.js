@@ -7,10 +7,15 @@ import {
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
 
-let app;
+import ElementPlus from "element-plus";
+import { createPinia } from 'pinia'
+
+let app 
 
 const render = (container) => {
-  app = createApp(App);
+  app =  createApp(App)
+  app.use(ElementPlus)
+  app.use(createPinia())
   app.use(router);
   app.mount(container ? container.querySelector("#app-vue3") : "#app-vue3");
 };

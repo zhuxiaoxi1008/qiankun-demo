@@ -1,10 +1,11 @@
 <script setup>
 import { RouterLink, RouterView, useRoute  } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 
 import { onMounted } from 'vue'
 import { start } from 'qiankun'
 import { injectMicroApps } from './qiankun-config/index'
+// const route = useRoute()
+
 onMounted(() => {
   if (!window.qiankunStarted) {
     // 是否启用qiankun
@@ -12,7 +13,8 @@ onMounted(() => {
     injectMicroApps()
     // 开启qiankun
     start({
-      prefetch: 'all'
+      prefetch: 'all',
+      // sandbox: false,
       // sandbox: {
       //   sandbox: { strictStyleIsolation: true }, // 严格隔离
       //   experimentalStyleIsolation: true // 样式隔离
@@ -22,25 +24,23 @@ onMounted(() => {
 })
 
 
-const route = useRoute()
-console.log(route)
+
 
 </script>
 
 <template>
   <div class="wrapper">
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/app-vue3">app1</RouterLink>
-      <RouterLink to="/app-vue3/about">app1 about</RouterLink>
+      <RouterLink to="/">Sys_Home</RouterLink>
+      <RouterLink to="/about">Sys_About</RouterLink>
+      <RouterLink to="/app-vue3">app1_home</RouterLink>
+      <RouterLink to="/app-vue3/about">app1_about</RouterLink>
+      <el-button type="primary" @click="start">start</el-button>
   </div>
 
   <RouterView />
   
   <div id="app-vue3"></div>
   <!--  这里是子应用的入口容器，需要跟subApps 中子项的container对应 -->
-
-
 </template>
 
 <style scoped>

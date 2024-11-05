@@ -12,7 +12,7 @@ const ck = () => {
 
 <template>
   <div>
-    <h1 class="green">This is app1</h1>
-    <button type="primary" @click="ck">Primary Button</button>
+    <h1 class="green">This is app1 home page</h1>
+    <el-button type="primary"  @click="ck">Primary Button</el-button>
   </div>
 </template>
