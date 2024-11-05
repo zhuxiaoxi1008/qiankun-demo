@@ -27,3 +27,25 @@ npm run dev
 ```sh
 npm run build
 ```
+---
+
+
+nginx配置
+
+html ——> index      # qiankun-sys
+        child/app1  # qiankun-app1
+
+```
+ #access_log  logs/host.access.log  main;
+        location /child/app1 {
+            root   html;
+            index  index.html index.htm;
+            try_files $uri $uri/ /child/app1/index.html;
+        }
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+            try_files $uri $uri/ /index.html;
+        }
+```

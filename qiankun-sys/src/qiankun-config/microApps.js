@@ -2,7 +2,8 @@
 let subApps = [
     {
       name: "app-vue3",// name 需要唯一
-      entry: "//localhost:9001",
+      // entry: "//localhost:9001",
+      entry: "/child/app1/",
       container: "#app-vue3",// 表示承载为应用的容器的id
       activeRule: "/app-vue3",// 匹配的路由
     },

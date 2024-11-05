@@ -16,7 +16,7 @@ const cdn = {
   // Vue Router
   vueRouter: 'https://unpkg.com/vue-router@4.4.5/dist/vue-router.global.js',
   // Pinia
-  pinia: 'https://unpkg.com/pinia@2.2.6/dist/pinia.iife.js',
+  // pinia: 'https://unpkg.com/pinia@2.2.6/dist/pinia.iife.js',
   // Element Plus
   elementPlus: 'https://unpkg.com/element-plus@2.8.7/dist/index.full.js',
   elementPlusCSS: 'https://unpkg.com/element-plus@2.8.7/dist/index.css'
@@ -57,19 +57,19 @@ export default defineConfig({
           external: true
         },
         {
-          name: 'pinia',
-          var: 'Pinia',
-          path: cdn.pinia,
-          imports: ['createPinia'],
-          external: true
-        },
-        {
           name: 'element-plus',
           var: 'ElementPlus',
           path: cdn.elementPlus,
           css: cdn.elementPlusCSS,
           external: true
-        }
+        },
+        // {
+        //   name: 'pinia',
+        //   var: 'Pinia',
+        //   path: cdn.pinia,
+        //   imports: ['createPinia'],
+        //   external: true
+        // },
       ]
     })
   ],
